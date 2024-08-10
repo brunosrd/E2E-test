@@ -11,6 +11,7 @@ describe('Orange HRM Test', () => {
   }
 
   it('Login - Success', () => {
+
     cy.visit('/auth/login')
     cy.get(selectorsList.usernameField).type(userData.userSucess.username)
     cy.get(selectorsList.passwordField).type(userData.userSucess.password)
