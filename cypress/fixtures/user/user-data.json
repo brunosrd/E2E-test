@@ -3,7 +3,9 @@
       "username": "Admin",
       "password": "admin123",
       "firstName": "Bruno",
+      "middleName": "Soares",
       "lastName": "Ribeiro",
+      "nickName": "quatiJr",
       "employeeId": "brunosib",
       "otherId":  "brunosrd",
       "driverLicence": "DriverLicenceTest"
