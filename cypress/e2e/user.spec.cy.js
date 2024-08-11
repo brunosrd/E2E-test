@@ -12,9 +12,15 @@ describe('Orange HRM Test', () => {
     firstNameField: "[name='firstName']",
     lastNameField: "[name='lastName']",
     genericField: ".oxd-input--active",
-    dataField: "[placeholder='yyyy-dd-mm']",
     dataCloseButton: ".--close",
-    submitButton: ":nth-child(1) > .oxd-form > .oxd-form-actions > .oxd-button"
+    submitButton: ".orangehrm-left-space",
+    nationalityMaritalStatus: "[clear='false']",
+    itemNationality: ".oxd-select-dropdown > :nth-child(27)",
+    itemMaritalStatus: ".oxd-select-dropdown > :nth-child(4)",
+    genderSelect: ".oxd-radio-input",
+    typeBlood: ".oxd-select-text--arrow",
+    bloodSelect: ".oxd-select-dropdown > :nth-child(6)",
+    testField: "[options='']"
   }
 
   it.only('User info Update - Success', () => {
@@ -26,16 +32,33 @@ describe('Orange HRM Test', () => {
     cy.location('pathname').should('equal', '/web/index.php/dashboard/index')
     cy.get(selectorsList.dashboardGrid).should('be.visible')
     cy.get(selectorsList.myInfoButton).click()
-    cy.get(selectorsList.firstNameField).clear().type('FirtNameTest')
-    cy.get(selectorsList.lastNameField).clear().type('LastNameTest')
-    cy.get(selectorsList.genericField).eq(3).clear().type('Employee')
-    cy.get(selectorsList.genericField).eq(4).clear().type('OtherIdTest')
-    cy.get(selectorsList.genericField).eq(5).clear().type('DriverLicenceTest')
+    cy.get(selectorsList.firstNameField).clear().type(userData.userSucess.firstName)
+    cy.get(selectorsList.lastNameField).clear().type(userData.userSucess.lastName)
+    cy.get(selectorsList.genericField).eq(3).clear().type(userData.userSucess.employeeId)
+    cy.get(selectorsList.genericField).eq(4).clear().type(userData.userSucess.otherId)
+    cy.get(selectorsList.genericField).eq(5).clear().type(userData.userSucess.driverLicence)
     cy.get(selectorsList.genericField).eq(6).clear().type('2024-10-08')
     cy.get(selectorsList.dataCloseButton).click()
+    cy.get(selectorsList.nationalityMaritalStatus).eq(0).click()
+    cy.get(selectorsList.itemNationality).click()
+    cy.get(selectorsList.nationalityMaritalStatus).eq(1).click()
+    cy.get(selectorsList.itemMaritalStatus).click()
+    cy.get(selectorsList.genericField).eq(8).clear().type('1999-19-01')
+    cy.get(selectorsList.dataCloseButton).click()
+    cy.get(selectorsList.genderSelect).eq(0).click()
     cy.get(selectorsList.submitButton).eq(0).click()
     cy.get('body').should('contain', 'Successfully Update')
     cy.get('.oxd-toast-close')
+    cy.get(selectorsList.typeBlood).eq(2).click()
+    cy.get(selectorsList.bloodSelect).click()
+    cy.get(selectorsList.testField).clear().type('TestField')
+    cy.get(selectorsList.submitButton).eq(1).click()
+    cy.get('body').should('contain', 'Successfully Saved')
+    cy.get('.oxd-toast-close')
+
+
+
+ 
   })
   it('Login - Fail', () => {
     cy.visit('/auth/login')

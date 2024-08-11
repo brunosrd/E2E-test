@@ -1,7 +1,13 @@
 {
     "userSucess": {
       "username": "Admin",
-      "password": "admin123"
+      "password": "admin123",
+      "firstName": "Bruno",
+      "lastName": "Ribeiro",
+      "employeeId": "brunosib",
+      "otherId":  "brunosrd",
+      "driverLicence": "DriverLicenceTest"
+      
     },
     "userFail": {
       "username": "Teste",
