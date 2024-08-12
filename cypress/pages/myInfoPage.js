@@ -46,7 +46,7 @@ class MyInfoPage {
         cy.get(this.selectorsList().itemNationality).click()
         cy.get(this.selectorsList().nationalityMaritalStatus).eq(1).click()
         cy.get(this.selectorsList().itemMaritalStatus).click()
-        cy.get(this.selectorsList().genericField).eq(7).clear().type(dateOfBirth)
+        cy.get(this.selectorsList().genericField).eq(8).clear().type(dateOfBirth)
         cy.get(this.selectorsList().dataCloseButton).click()
         cy.get(this.selectorsList().genderSelect).eq(0).click()
         //cy.get(this.selectorsList().genericField).eq(12).clear().type(militaryService)
