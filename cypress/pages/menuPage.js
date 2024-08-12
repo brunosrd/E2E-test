@@ -1,4 +1,4 @@
-import DashboardPage from "./dashboarPage"
+import DashboardPage from "./dashboarPage"  
 
 class MenuPage {
     selectorsList (){

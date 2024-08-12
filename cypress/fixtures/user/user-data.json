@@ -8,9 +8,15 @@
       "nickName": "quatiJr",
       "employeeId": "brunosib",
       "otherId":  "brunosrd",
-      "driverLicence": "DriverLicenceTest"
-      
+      "driversLicenceNumber": "1719",
+      "licenseDate": "2024-10-08",
+      "ssnNumber": "SSNNumberTest",
+      "sinNumber":"SINNumberTest",
+      "dateOfBirth": "1999-19-01",
+      "militaryService": "Não",
+      "testField": "TestField"     
     },
+    
     "userFail": {
       "username": "Teste",
       "password": "Test"

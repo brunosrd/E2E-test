@@ -28,8 +28,10 @@ describe('Orange HRM Test', () => {
     cy.get(selectorsList.usernameField).type(userData.userSucess.username)//usarnameField da lista de seletores, escreve a sequencia de dentro
     cy.get(selectorsList.passwordField).type(userData.userSucess.password)// pega passordField e escreve userData-userSucess-password
     cy.get(selectorsList.loginButton).click()// clica no botão
+
     cy.location('pathname').should('equal', '/web/index.php/dashboard/index')// verifica se esta dentro/igual da url descrita
     cy.get(selectorsList.dashboardGrid).should('be.visible')//verifica se o elemento esta visivel na tela
+
     cy.get(selectorsList.myInfoButton).click()//clica no botão myInfoButton da lista de seletores
     cy.get(selectorsList.firstNameField).clear().type(userData.userSucess.firstName)//seleciona o campo, limpa, escreve
     cy.get(selectorsList.lastNameField).clear().type(userData.userSucess.lastName)//seleciona o campo, limpa, escreve
