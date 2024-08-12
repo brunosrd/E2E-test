@@ -1,5 +1,4 @@
 # My Cypress Automation</h1>
-## My Feature de Login Success and Fail
 
 This project utilizes Cypress to automate the testing of a login feature and a user update feature. Cypress is a JavaScript-based end-to-end testing framework that allows developers to write tests and execute then in real browser.
 
