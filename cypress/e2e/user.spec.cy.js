@@ -7,7 +7,7 @@ import MyInfoPage from '../pages/myInfoPage'
 // Chance é uma biblioteca usada para gerar dados aleatórios para testes.
 const Chance = require('chance'); // Importa a biblioteca Chance.
 
-// Cria instâncias das classes importadas.
+// Instâncias das classes importadas.
 const chance = new Chance()
 const loginPage = new LoginPage()
 const dashboardPage = new DashboardPage()
@@ -18,12 +18,12 @@ const myInfoPage = new MyInfoPage()
 describe('Orange HRM Test', () => {
   it('User info Update - Success', () => {
     loginPage.accessLoginPage()
-    loginPage.loginWithUser(userData.userSucess.username, userData.userSucess.password)
+    loginPage.loginWithUser(userData.userFail.username, userData.userFail.password)
     dashboardPage.checkDashboarPage()
     menuPage.accessMyInfo()
-    myInfoPage.fillPersonalDetails(chance.first(), chance.name({ middle: true }), chance.last()) //Caminho da biblioteca
+    myInfoPage.fillPersonalDetails(userData.userSucess.employeeId,userData.userSucess.otherId, userData.userSucessdriversLicenceNumber,userData.userSucess.licenseDate) /
     myInfoPage.fillEmployeeDetails(userData.userSucess.employeeId, userData.userSucess.otherId, userData.userSucess.driversLicenceNumber, userData.userSucess.licenseDate)
-    myInfoPage.fillStatus(userData.userSucess.dateOfBirth, userData.userSucess.testField) //caminho da fixture user-data
+    myInfoPage.fillStatus(userData.userSucess.dateOfBirth, userData.userSucess.testField)
     myInfoPage.saveForm()
   })
 })

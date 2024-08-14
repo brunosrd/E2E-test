@@ -2,19 +2,19 @@
     "userSucess": {
       "username": "Admin",
       "password": "admin123",
-      "firstName": "Bruno",
-      "middleName": "Soares",
-      "lastName": "Ribeiro",
-      "nickName": "quatiJr",
-      "employeeId": "brunosib",
-      "otherId":  "brunosrd",
-      "driversLicenceNumber": "1719",
-      "licenseDate": "2024-10-08",
-      "ssnNumber": "SSNNumberTest",
-      "sinNumber":"SINNumberTest",
-      "dateOfBirth": "1999-19-01",
-      "militaryService": "Não",
-      "testField": "TestField"     
+      "firstName": "chance.first()",
+      "middleName": "chance.first()",
+      "lastName": "chance.last()",
+      "nickName": "chance.word({ length: 8 })",
+      "employeeId": "chance.string({ length: 8, pool: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' })",
+      "otherId": "chance.string({ length: 8, pool: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' })",
+      "driversLicenceNumber": "chance.string({ length: 6, pool: '0123456789' })",
+      "licenseDate": "chance.date({ string: true, year: 2024 })",
+      "ssnNumber": "chance.ssn()",
+      "sinNumber": "chance.string({ length: 9, pool: '0123456789' })",
+      "dateOfBirth": "chance.birthday({ string: true, year: 1999 })",
+      "militaryService": "chance.bool() ? 'Sim' : 'Não'",
+      "testField": "chance.word({ length: 10 })"
     },
     
     "userFail": {
